@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html">
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>TUNG NGUYEN :. Biography</title>
+    <meta name="description" content="TUNG NGUYEN :. Teaching">
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- CSS
+    ================================================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="bootstrap.css">
+
+    <!-- Favicon
+    ================================================== -->
+    <link rel="shortcut icon" href="../../images/favicon.ico">
+
+    <style>
+        #link { color: #212529; } /* CSS link color */
+        .br { 
+            display: block; 
+            margin-bottom: 0.4em; 
+        } 
+
+        .br1 { 
+            display: block; 
+            margin-bottom: 0.7em; 
+        }
+    </style>
+
+</head>
+<body data-rendering="true" >
+<div id="topmenu" class="navbar navbar-inverse navbar-fixed-top" style="background-color: #16367F; border-color: #16367F;  padding-left: 265px;">
+    <div class="container">
+        <div class="btn-group d-flex flex-wrap" role="group">
+            <button type="button" class="btn btn-warning font-weight-bold" disabled>TUNG NGUYEN</button>
+	        <a href="intro.html" class="btn btn-primary">Biography</a>
+            <a href="research.html" class="btn btn-primary">Research</a>
+            <a href="programming.html" class="btn btn-primary active" >Programming</a>
+            <a href="contact.html" class="btn btn-primary">Contact</a>
+        </div>
+    </div>
+</div><!-- topmenu -->
+
+<div class="container" style="
+    padding-left: 140px;
+    padding-right: 140px; ">
+                                        
+    <div id="content" class="col-xs-12">
+        <div id="main" style="font-size:15px;">
+            <p stype="border-width: 2px"> <br> </p>
+            <p></p>
+
+            <ul class="nav nav-tabs" id="tabs-main" role="tablist">
+                <li class="nav-item"><a class="nav-link active" href="#python" data-toggle="tab" role="tab">Machine Learning with Python</a></li>
+                <li class="nav-item"><a class="nav-link" href="#r" data-toggle="tab" role="tab">Causal Inference with R</a></li>
+                
+            </ul>
+
+            <div class="tab-content" id="content-main" style="font-size:15px; text-align:justify;">
+                <div class="tab-pane active" id="python" role="tabpanel">
+                    <p></p>
+                        <div class="media-body" style="font-size:100%;">
+                            <b>Why did I learn Machine Learning?</b> 
+                            <p></p>
+                            <p> As a Ph.D. in Finance, I want to make money from my knowledge, 
+                                so I started working independently on stock trading algorithms in my spare time. I was reading about 
+                                quantitative analysis on forums and blogs and had this idea about quant research. My attention quickly 
+                                turned to machine learning and neural networks. By reading more, I realized that these techniques could 
+                                be applied generally to all kinds of domains, not just finance. By that time, I was hooked, and I just 
+                                knew I had to learn programming and machine learning.</p>
+                                <p style="text-align:center;"><img src="ml.png" alt="ml_photo" width="550"></p>
+
+                            <p></p>
+                            Here I have posted some Python tutorials on Machine Learning.
+                            <p></p>
+                            <ul style="list-style-type:square;">
+                            <li><a id="link" href="prog_ML_reg1.html"> <ins>Multiple Regression with Scikit-Learn</ins></a>
+                            <span class="br"></span>
+                            <i>Learning</i>: Using Pandas package to read and manage data; using Scikit-Learn package to build up model and 
+                            compute the regression weights; computing the Residual Sum of Squares; looking at coefficients and interpreting 
+                            their meanings; evaluating multiple models via RSS.</li>
+                            <span class="br1"></span>
+                            <li><a id="link" href="prog_ML_reg2.html"> <ins>Gradient Descent for Multiple Regression</ins></a>
+                                <span class="br"></span>
+                                <i>Learning</i>: Using NumPy arrays; writing user-defined functions in Python; writing a numpy 
+                                function to compute the derivative of the regression weights with respect to a single feature; 
+                                writing gradient descent function to compute the regression weights given an initial weight vector, 
+                                step size and tolerance; using the gradient descent function to estimate regression weights for multiple features.</li>
+                                <span class="br1"></span>
+                                <li><a id="link" href="prog_ML_reg3.html"> <ins>Assessing Performance - Polynomial Regression</ins></a>
+                                    <span class="br"></span>
+                                    <i>Learning</i>: Writing a function to take an an array and a degree and return an data frame where each column 
+                                    is the array to a polynomial value up to the total degree; Using a plotting tool (e.g. matplotlib) to visualize 
+                                    polynomial regressions; using a plotting tool (e.g. matplotlib) to visualize the same polynomial degree on different 
+                                    subsets of the data; using a validation set to select a polynomial degree; assessing the final fit using test data.</li>
+                                    <span class="br1"></span>
+                                    <li><a id="link" href="prog_ML_reg4.html"> <ins>Ridge Regression</ins></a>
+                                        <span class="br"></span>
+                                        <i>Learning</i>: Using a pre-built implementation of regression to run polynomial regression; using matplotlib to visualize 
+                                        polynomial regressions; using a pre-built implementation of regression to run polynomial regression, this time with L2 penalty;
+                                        using matplotlib to visualize polynomial regressions under L2 regularization; choosing best L2 penalty using cross-validation;
+                                        assessing the final fit using test data; implementing the ridge regression learning algorithm using gradient descent</li>
+                                        <span class="br1"></span>
+                                        <li><a id="link" href="prog_ML_reg5.html"> <ins>Feature Selection and LASSO Regression</ins></a>
+                                            <span class="br"></span>
+                                            <i>Learning</i>: Running LASSO with different L1 penalties; choosing best L1 penalty using a validation set.
+                                            choosing best L1 penalty using a validation set, with additional constraint on the size of subset; implementing your own 
+                                            LASSO solver using coordinate descent. </li>       
+                                            <span class="br1"></span>
+                                            <li><a id="link" href="prog_ML_reg6.html"> <ins>Nearest Neighbors & Kernel Regression</ins></a>
+                                                <span class="br"></span>
+                                                <i>Learning</i>: Finding the k-nearest neighbors of a given query input; predicting the output for the 
+                                                query input using the k-nearest neighbors; choosing the best value of k using a validation set. </li>                     
+                                                <span class="br1"></span>
+                                                <li><a id="link" href="prog_class1.html"> <ins>Linear Classifiers and Logistic Regression</ins></a>
+                                                    <span class="br"></span>
+                                                    <i>Learning</i>: Training a logistic regression model to predict the sentiment of product reviews; inspecting the weights (coefficients) 
+                                                    of a trained logistic regression model; making a prediction (both class and probability) of sentiment for a new product review;
+                                                    writing a function to compute the accuracy of the model; inspecting the coefficients of the logistic regression model and interpret 
+                                                    their meanings; comparing multiple logistic regression models. </li> 
+                                                    <span class="br1"></span>
+                                                    <li><a id="link" href="prog_class2.html"> <ins>Maximum Likelihood Estimation for Parameter Learning</ins></a>
+                                                        <span class="br"></span>
+                                                        <i>Learning</i>: Implementing the link function for logistic regression; writing a function to compute the derivative of the log likelihood 
+                                                        function with respect to a single coefficient; implementing gradient ascent; predicting sentiments; computing classification accuracy for 
+                                                        the logistic regression model. </li> 
+
+                                                        <span class="br1"></span>
+                                                <li><a id="link" href="prog_class3.html"> <ins>Overfitting and Regularization in Logistic Regression</ins></a>
+                                                <span class="br"></span>
+                                                <i>Learning</i>: Writing a function to compute the derivative of log likelihood function with an L2 penalty with respect 
+                                                to a single coefficient; implementing gradient ascent with an L2 penalty; empirically exploring how the L2 penalty can ameliorate overfitting. </li>
+                    </div>                </div>
+
+
+
+                <div class="tab-pane" id="r" role="tabpanel">
+                    <p></p>
+                    <b>Correlation is not causation</b>
+                    <p></p>
+                    <p>When there is a strong relationship in a scatterplot, we tend to jump to a premature and often false conclusion that changes in 
+                        the predictor are actually causing changes in the outcome. We can never reliably conclude “this is what did it” just by seeing 
+                        a strong correlation (or any other form of strong relationship) between variables. Correlations are critical in scientific 
+                        analysis, but given enough data, it is possible to find things that correlate, even when they shouldn't. The famous example 
+                        concerns a strong correlation between the rise of the use of Facebook and the deterioration in the Greek economy. The site <a id="link" href="http://www.tylervigen.com/spurious-correlations"> <ins>Spurious Correlations</ins></a> 
+                        also posts many funny ones to spurious correlations, such as a 0.99 correlation between “US spending on science, space, and technology” and 
+                        “Suicides by hanging, strangulation and suffocation” or a 0.99 correlation between “Divorce rate in Maine” and “Per capita 
+                        consumption of margarine (US)”. </p>
+
+                    <p>So, when you see your interested variable is strongly statistically significant at the first time of running regression model, 
+                    don't get too excited and straightforwardly conclude that it has a positive or negative effect on the dependent variable. 
+                    That relationship can be a spurious accidental correlation! Keep in your mind that correlation is not causation. 
+                     </p>
+
+                    <p style="text-align:center;"><img src="casual.png" alt="causation" width="550"></p>
+                    <p></p>
+                    Here I have implemented some popular statistical methods for causal inference in R.
+                    <p></p>
+                    <ul style="list-style-type:square;">
+                        <li><a id="link" href="prog_casual_psm.html"> <ins>Propensity Score Matching (PSM)</ins></a>
+                        <span class="br"></span>
+                    <p>PSM is a widely used tool for determining causal effects from observational data.  
+                    Propensity scores summarize the effects of a potentially large number of confounding variables by creating 
+                    a predictive model of treatment. The computation of a propensity score requires specifying a set of potentially 
+                    confounding variables. In this tutorial, we will implement PSM with steps following: i) estimate the propensity 
+                    score (the probability of being Treated given a set of pre-treatment covariates); ii) choose and execute a 
+                    matching algorithm; iii) examine covariate balance after matching; iv) estimate treatment effects.</p>
+                    <span class="br1"></span>
+                    <li><a id="link" href="prog_casual_did.html"> <ins>Difference in Differences (DiD)</ins></a>
+                    <span class="br"></span>
+                    DiD is a quasi-experimental design that makes use of longitudinal data from treatment and control groups to obtain 
+                    an appropriate counterfactual to estimate a causal effect. DiD is typically used to estimate the effect of a specific 
+                    intervention or treatment (such as a passage of law, enactment of policy, or large-scale program implementation) by 
+                    comparing the changes in outcomes over time between a population that is enrolled in a program (the intervention group) 
+                    and a population that is not (the control group). In this tutorial, we will implement DiD by reproduce the results of the 
+                    famous paper “Minimum Wages and Employment:  A Case Study of the Fast-Food Industry  in New Jersey and Pennsylvania” of 
+                    Card and Krueger (1994).
+                </div>
+                
+            </div>
+        </div>
+        <hr>
+
+        
+    </div><!-- content -->
+</div><!-- container -->
+
+<!-- JS
+================================================== -->
+<script type="text/javascript" src="../../javascripts/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="../../javascripts/popper-1.14.6.min.js"></script>
+<script type="text/javascript" src="../../javascripts/bootstrap.min.v4.2.1.js"></script>
+
+</body>
+</html>
