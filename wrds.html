@@ -1,0 +1,54 @@
+<html>
+<body>
+
+**************************************************************** <br>
+<b> Access WRDS Data Using SAS/R </b> <br>
+**************************************************************** <br>
+<p></p>
+<b> 1. SAS code </b> <br>
+<p></p>
+# Establishing a connection <br>
+<p></p>
+%let wrds = wrds.wharton.upenn.edu 4016; <br>
+options comamid=TCP; <br> 
+signon wrds username=_prompt_; <br>
+<p></p>
+# Querying Data <br>
+<p></p>
+
+rsubmit; <br>
+
+libname crsp "/wrds/crsp/sasdata/a_stock"; <br>
+
+data Price; <br>
+&nbsp;&nbsp;&nbsp; &emsp; set crsp.dsf (keep= permno permco cusip date hsiccd prc ret shrout); <br>
+&nbsp;&nbsp;&nbsp; &emsp; by permno date; <br>
+&nbsp;&nbsp;&nbsp; &emsp; where mdy(01,01, 1996)<=date<=mdy(12,31,2001); <br>
+run; <br>
+<p></p>
+<b> 2. R code </b> <br>
+<p></p>
+# Establishing a connection <br>
+<p></p>
+library(RPostgres) <br> 
+wrds <- dbConnect(Postgres(), <br>
+&nbsp;&nbsp;&nbsp; &emsp; host='wrds-pgdata.wharton.upenn.edu', <br>
+&nbsp;&nbsp;&nbsp; &emsp; port=9737, <br>
+&nbsp;&nbsp;&nbsp; &emsp; user = '********', <br>
+&nbsp;&nbsp;&nbsp; &emsp; password = '**********', <br>
+&nbsp;&nbsp;&nbsp; &emsp; dbname='wrds', <br>
+&nbsp;&nbsp;&nbsp; &emsp; sslmode='require') <br>
+<p></p>
+# Querying Data <br>
+<p></p>
+res <- dbSendQuery(wrds, "select cusip,permno,date,bidlo,askhi <br>
+&nbsp;&nbsp;&nbsp; &emsp; from crsp.dsf <br>
+&nbsp;&nbsp;&nbsp; &emsp; where askhi > 2500 <br>
+&nbsp;&nbsp;&nbsp;&emsp; and bidlo < 2000") <br>
+data <- dbFetch(res, n=15) <br>
+dbClearResult(res) <br>
+data <br>
+
+
+</html>
+</body>

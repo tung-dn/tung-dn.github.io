@@ -1,0 +1,109 @@
+<html>
+<body>
+
+*************************************************************************************<br>
+<b> Clustered SEs in Stata and R </b> <br>
+*************************************************************************************<br>
+<p></p>
+<b> 1. Stata code </b><br>
+<p></p>
+# Loading Petersen (2006) 's dataset <br>
+webuse set http://www.kellogg.northwestern.edu/faculty/petersen/htm/papers/se/ <br>
+webuse test_data.dta, clear <br>
+<p></p>
+
+# OLS with SE clustered by firm <br>
+reg y x, vce(cluster firmid) <br>
+<p></p>
+
+# OLS with SE clustered by time <br>
+reg y x, vce(cluster year) <br>
+<p></p>
+
+# Setting up dataset as a panel <br>
+xtset firmid year
+<p></p>
+
+# FE regression with SE clustered by firm <br>
+xtreg y x, fe vce(cluster firmid) <br>
+<p></p>
+
+# FE regression with SE clustered by time <br>
+xtreg y x, fe vce(cluster year) nonest <br>
+<p></p>
+
+# Clustered standard errors - 2 dimensions by firm and time <br>
+cluster2 y x, fcluster(firmid) tcluster(year) <br>
+<p></p>
+
+# Clustered standard errors - Fama-Macbeth  <br>
+tsset firmid year
+fm y x, byfm(by_variable)  <br>
+<p></p>
+
+# Clustered standard errors - Newey-West  <br>
+tsset firmid year <br>
+newey y x, lag(lag_length) force <br>
+<p></p>
+<b> 2. R code </b> <br>
+<p></p>
+
+# Loading the required libraries <br>
+library(plm) <br>
+library(sandwich) <br>
+library(lmtest) <br>
+library(multiwayvcov) <br>
+
+<p></p>
+
+# Loading Petersen's dataset <br>
+library(foreign) <br>
+petersen <- read.dta("http://www.kellogg.northwestern.edu/faculty/petersen/htm/papers/se/test_data.dta") <br>
+<p></p>
+
+# Pooled OLS model <br>
+pooled.ols <- plm(formula=y~x, data=petersen, model="pooling", index=c("firmid", "year")) <br>
+<p></p>
+
+# Fixed effects model <br>
+fe.firm <- plm(formula=y~x, data=petersen, model="within", index=c("firmid", "year")) <br>
+<p></p>
+
+# Clustered standard errors - OLS (by firm) <br>
+coeftest(pooled.ols, vcov=vcovHC(pooled.ols, type="sss", cluster="group")) <br>
+<p></p>
+
+# Clustered standard errors - OLS (by time) <br>
+coeftest(pooled.ols, vcov=vcovHC(pooled.ols, type="sss", cluster="time")) <br>
+<p></p>
+
+# Clustered standard errors - OLS (by firm and time) <br>
+coeftest(pooled.ols, vcov=vcovDC(pooled.ols, type="sss")) <br>
+<p></p>
+
+# Clustered standard errors - Fixed effect regression (by firm) <br>
+coeftest(fe.firm, vcov=vcovHC(fe.firm, type="sss", cluster="group")) <br>
+<p></p>
+
+# Clustered standard errors - Fixed effect regression (by time) <br>
+coeftest(fe.firm, vcov=vcovHC(fe.firm, type="sss", cluster="time")) <br>
+<p></p>
+
+# Clustered standard errors - Fixed effect regression (by firm and time) <br>
+coeftest(fe.firm, vcov=vcovDC(fe.firm, type="sss")) <br>
+<p></p>
+
+# Clustered standard errors - Fama-Macbeth  <br>
+library(plm) <br>
+summary(pmg(y ~ x, data=df.petersen, index=c("year","firmid")))  <br>
+<p></p>
+
+# Clustered standard errors - Newey-West  <br>
+model <- lm(y~x, data=df.petersen)  <br>
+coeftest(model, NeweyWest(model, lag = 1, prewhite = FALSE)) -- Newey-West '87 1 lag  <br>
+coeftest(model, NeweyWest(model)) -- Newey-West '94 auto-lag  <br>
+floor(bwNeweyWest(model)) # provides lag parameter used by Newey-West '94  <br>
+
+
+</body>
+</html>

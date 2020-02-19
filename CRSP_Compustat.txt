@@ -1,0 +1,25 @@
+/************************************************************************************
+* STEP ONE: Extract Compustat data;
+************************************************************************************/
+ 
+data comp1;
+  set comp.funda;
+  where fyear>=1986
+    and indfmt='INDL' and datafmt='STD' and popsrc='D' and consol='C';
+  keep gvkey datadate fyear;
+run;
+ 
+/*******************************************************************************************
+* STEP TWO: Link GVKEYS to CRSP identifiers;                                               *
+* Use CCMXPF_LNKHIST table to obtain CRSP identifiers                                      *
+********************************************************************************************/
+ 
+proc sql;
+  create table comp2 as
+  select a.*, b.lpermno as permno
+  from comp1 as a, crsp.ccmxpf_lnkhist as b
+  where a.gvkey=b.gvkey and b.linkprim in ('P', 'C') and
+  b.LINKTYPE in ('LU', 'LC') and
+  a.datadate >= b.LINKDT and (a.datadate <= b.LINKENDDT or missing(b.LINKENDDT))
+  order by gvkey, datadate;
+quit;

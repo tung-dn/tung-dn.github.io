@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,63 +16,171 @@
 
     <!-- CSS
     ================================================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="bootstrap.css">
 
     <!-- Favicon
     ================================================== -->
     <link rel="shortcut icon" href="../../images/favicon.ico">
 
-
+    <style>
+        #link { color: #212529; } /* CSS link color */
+        .br { 
+            display: block; 
+            margin-bottom: 0.7em; 
+        } 
+    </style>
 
 </head>
 <body data-rendering="true" >
-<div id="topmenu" class="navbar navbar-inverse navbar-fixed-top" style="background-color: #16367F; border-color: #16367F;">
+<div id="topmenu" class="navbar navbar-inverse navbar-fixed-top" style="background-color: #16367F; border-color: #16367F;  padding-left: 265px;">
     <div class="container">
         <div class="btn-group d-flex flex-wrap" role="group">
             <button type="button" class="btn btn-warning font-weight-bold" disabled>TUNG NGUYEN</button>
-            <a href="index.html" class="btn btn-primary active">Biography</a>
-            <a href="research.html" class="btn btn-primary">Research</a>
+	        <a href="intro.html" class="btn btn-primary">Biography</a>
+            <a href="research.html" class="btn btn-primary active">Research</a>
             <a href="programming.html" class="btn btn-primary">Programming</a>
-            <a href="../share/nosso_index.php?item=visualizations" class="btn btn-primary">Visualizations</a>
+            <a href="contact.html" class="btn btn-primary">Contact</a>
         </div>
     </div>
 </div><!-- topmenu -->
 
-<div class="container">
+<div class="container" style="
+    padding-left: 140px;
+    padding-right: 140px; ">
                                         
     <div id="content" class="col-xs-12">
-        <div id="main">
+        <div id="main" style="font-size:15px;">
+            <p stype="border-width: 2px"> <br> </p>
             <p></p>
-            <h3>Research Papers</h3>
-            <p>Check out my woking papers.</p>
 
- 
-
-            <div class="tab-content" id="content-main" style="text-align:justify;">
+            <ul class="nav nav-tabs" id="tabs-main" role="tablist">
+                <li class="nav-item"><a class="nav-link active" href="#paper" data-toggle="tab" role="tab">Research Papers</a></li>
+                <li class="nav-item"><a class="nav-link" href="#resources" data-toggle="tab" role="tab">Resources</a></li>
                 
+            </ul>
+
+            <div class="tab-content" id="content-main" style="font-size:15px; text-align:justify;">
+                <div class="tab-pane active" id="paper" role="tabpanel">
                     <p></p>
-                    <p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3394564"><b>Uncertainty and Corporate Innovation: Evidence from Terrorist Attacks</b></a>
-                        (with <i>Eliezer M. Fich</i> and <i>Dimitris Petmezas</i>).</p>
-                    <p><i><ins>Abstract:</ins></i> We examine the causal effects of uncertainty on corporate innovation by exploiting terrorist attacks. 
-			Counting victims to measure an attack&#180;s strength, we find that as terrorism intensity increases, firms near 
-			the strikes exhibit declines in R&D spending, patenting, citations, patent originality, and innovation value. 
-			Nearby firms do not hire new inventors and their inventors tend to move to distant companies. These effects 
-			continue for up to three years after the attacks. Our findings suggest that terrorism curtails innovation by 
-			aggravating the economic uncertainty affecting firms near the attacks and by worsening the uncertainty about 
-			personal security faced by their employees.</p>                
-                
-                    <p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3250400"><b>Does Safety Uncertainty Affect Acquisitions?</b></a>
-                        (with <i>Dimitris Petmezas</i> and <i>Nikolaos Karampatsas</i>).</p>
-                    <p><i><ins>Abstract:</ins></i> Using terrorist attacks as an exogenous shock to safety uncertainty, we provide causal evidence that firms located 
+                        <div class="media-body" style="font-size:100%;">
+                            <b>Working Papers</b> @ <a id="link" href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3128935"><ins>SSRN</ins></a>
+                            <p></p>
+                            <ol>
+                                <li><a id="link" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3394564"><ins>Uncertainty and Corporate Innovation: Evidence from Terrorist Attacks</ins></a>
+                                    (with Eliezer M. Fich and Dimitris Petmezas).</li>                           
+                            
+                            
+                                    <i>Abstract:</i> We examine the causal effects of uncertainty on corporate innovation by exploiting terrorist attacks. 
+                    Counting victims to measure an attack&#180;s strength, we find that as terrorism intensity increases, firms near 
+                    the strikes exhibit declines in R&D spending, patenting, citations, patent originality, and innovation value. 
+                    Nearby firms do not hire new inventors and their inventors tend to move to distant companies. These effects 
+                    continue for up to three years after the attacks. Our findings suggest that terrorism curtails innovation by 
+                    aggravating the economic uncertainty affecting firms near the attacks and by worsening the uncertainty about 
+                    personal security faced by their employees.</p>  
+                    
+                    <li><a id="link" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3250400"><ins>Does Safety Uncertainty Affect Acquisitions?</ins></a>
+                        (with Dimitris Petmezas and Nikolaos Karampatsas).</li>
+                    <i>Abstract:</i> Using terrorist attacks as an exogenous shock to safety uncertainty, we provide causal evidence that firms located 
 			near terrorism-stricken areas receive lower takeover premium. The latter finding is reflected in lower target firm 
 			abnormal returns and synergy gains. Additionally, given that firms in terrorism-afflicted areas become less attractive, 
 			they are less likely takeover targets for two years after the terrorist attack, and acquirers from such areas are more 
 			likely to buy target firms from more distant locations. We attribute our results to human capital which is affected by 
-			terrorism induced safety uncertainty, consistent with Abadie and Gardeazabal&#180;s (2008) theoretical model.</p>
-                <br>
-                <p>My work-in-progress papers.</p>
-		<p>1. <b>The Impact of CSR on Firm Performance during Traumatic Events</b> (with <i>Dimitris Petmezas</i>).</p>
-            
+			terrorism induced safety uncertainty, consistent with Abadie and Gardeazabal&#180;s (2008) theoretical model.
+                            </ol>
+
+                            <p> <b>Work-in-Progress Papers</b></p>
+        <p> <ol> <li> <ins>The Impact of CSR on Firm Performance during Traumatic Events</ins> (with Dimitris Petmezas).</li></ol></p>
+                    </div>                </div>
+
+
+
+                <div class="tab-pane" id="resources" role="tabpanel">
+                    <p></p>
+                    <b>Techniques</b>
+                    <p></p>
+                    <ul style="list-style-type:square;"> <li><b>Standard Error</b>: Is your standard error robust? In corporate finance work (with the use of panel data), 
+                        it is common to report corrected standard errors that account for serial-correlation and cross-correlation. 
+                        Packages in Stata and R now make the calculation of robust/clustered standard errors popular and easy. 
+                        For my own record, I am compiling the list of Stata and R code <a id="link" href="se.html"> <ins>here</ins></a>. Mitchell 
+                        Petersen's <a id="link" href="https://www.kellogg.northwestern.edu/faculty/petersen/htm/papers/se/se_programming.htm"> <ins>Programming Advice</ins></a> also provides instruction and test data on estimating standard errors of panel data.</li>
+                        <span class="br"></span>
+                        <li><b>Fixed Effects</b>: What to do when you have many fixed effects? <i>areg</i> and <i>xtreg</i> commands in Stata limit only one fixed effect, 
+                        while <i>regress</i> runs into Stata memory problems and also takes a long time to execute. A new command 
+                        <a id="link" href="http://scorreia.com/software/reghdfe/"> <ins><i>reghdfe</i></ins></a> written by <a id="link" href="http://scorreia.com/"> <ins>Sergio Correia</ins></a> is a great alternative that allows for two levels of fixed effects, 
+                        interactions between effects, and multi-way clustering. More importantly, it is fast!</li>
+                        <span class="br"></span>
+                        <li><b>Regression Outputs</b>: <i>Estout</i> is a useful Stata ado-file package that creates a table of regression results either 
+                            in the text file format, in the HTML format, or in the CSV format. See more details <a id="link" href="http://repec.sowi.unibe.ch/stata/estout/"> 
+                                <ins>here</ins></a> about how to download and use it.</li>
+                                <span class="br"></span>
+                        <li><b>Access WRDS data using SAS/R</b>: WRDS data is accessible remotely from the comfort of local computer, 
+                            through SAS and R. However, it requires a small amount of setup to initially connect. See <a id="link" href="wrds.html"> <ins>this sample SAS/R Code</ins></a>
+                              for establishing a connection to WRDS and some simple queries to retrieve data from the database. 
+                             Further guides for setting up a connection to WRDS can find <a id="link" href="https://wrds-www.wharton.upenn.edu/pages/support/programming-wrds/programming-sas/sas-from-your-computer/"> <ins>here</ins></a> 
+                             and <a id="link" href="https://wrds-www.wharton.upenn.edu/pages/support/programming-wrds/programming-r/r-from-your-computer/"> <ins>here</ins></a>.</li>
+                             <span class="br"></span>
+                        <li><b>Fama and French Industry Classification</b>: <a id="link" href="FFind.html"> <ins>Here</ins></a> are some ways to creates Fama-French industry classifications 
+                            based on SIC codes. More information about the classification can be found in <a id="link" href="https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_48_ind_port.html"> <ins>Ken French’s website</ins></a>.</li>
+                            <span class="br"></span>
+                        <li><b>Winsorize</b>: How to deal with outliers in the data set? In Stata, you can easily use <a id="link" href="https://ideas.repec.org/c/boc/bocode/s361402.html"> <ins><i>winsor</i></ins></a> or 
+                            <a id="link" href="https://ideas.repec.org/c/boc/bocode/s457765.html"> <ins><i>winsor2</i></ins></a> commands to winsorize 
+                            or trim extreme observations. Alternatively, you can find a SAS macro <a id="link" href="winsorize.txt"> <ins>here</ins></a>.  </li>
+                    
+                    </ul>
+                    <p></p>
+                    <b>Financial Databases</b>
+                    <p></p>
+                    <ul style="list-style-type:square;"><li><b>Database Navigator</b>: Where to find which data <br><br>
+                        <p style="text-align:center;"><img src="databases3.png" alt="Database Navigator"></p>
+                        </li>
+                        <br>
+                        <li>
+                            <b>Company Identifiers</b>: Many databases have unique codes or names which specifically identify a company (or group/fund) 
+                            in a database. Sometimes these identifiers are not specific to one database and then we can use them to merge company 
+                            data from more than one database into a new data set for research. Some company identifiers, however, appear to be unique 
+                            and unchangeable but when you research them, carefully they are not and may (through time) even be used by more than one 
+                            company. A typical example is the Ticker symbol used by companies at stock exchanges. CUSIP and the ISIN are often reasonably 
+                            reliable identifiers. Below is the table that lists identifiers available in major financial databases.<br><br>
+                            <p style="text-align:center;"><img src="identifier3.png" alt="Company Identifiers" class="center"></p>
+                        </li>
+                    </ul>
+                    <span class="br"></span>
+                    <p></p>
+                    <b>General Notes for Linking Databases</b>
+                    <p></p>
+                    <ul style="list-style-type:square;">
+                        <li>Ticker and company name can change over time. Matching databases by ticker or company name is difficult and extra efforts 
+                            are needed for a precise matching. Thus, this should be the last resort.</li>
+                            <span class="br"></span>
+                        <li>CUSIP is an alphanumeric code that identifies a North American financial security. A full CUSIP code consists of 9 digits. 
+                            The first 6 digits of a CUSIP identify the company, digits 7-8 describe the security and the 9th is check digit. 
+                            For example, the full CUSIP code for Microsoft Inc is: ‘594918104’.</li>
+                            <span class="br"></span>
+                        <li>A company can have multiple 8-digit Cusip codes at the same time, but the first 6 digits of these codes are identical. For instance, 
+                            Apple's common stock CUSIP is ‘03783310’ and a CUSIP for one of Apple's outstanding bonds is ‘037833AK’.</li>
+                            <span class="br"></span>
+                        <li>CUSIPs can change over time but are never reused. NCUSIP is the historical CUSIP. CUSIP is the current NCUSIP. The major 
+                            matching variable across databases are NCUSIP. The NCUSIP in Thomson One, I/B/E/S, and TAQ is labeled as 'CUSIP'.</li>
+                            <span class="br"></span>
+                        <li>Linking CRSP to Compustat: if you have access to the Compustat-CRSP Merged (CCM) database, they have done all the hard 
+                            work of matching CRSP's PERMNO's to Compustat's GVKEY's. You can directly download price/accounting data from the database 
+                            or use a CCM Linktable as <a id="link" href="CRSP_Compustat.txt"> <ins>here</ins></a>. If you do not have access, so you have to match them manually. <a id="link" href="https://sites.google.com/site/ruidaiwrds/data/linking-crsp-and-compustat"> <ins>Rui Dai</ins></a> and <a id="link" href="http://mattialandoni.blogspot.com/2012/12/on-merging-crsp-and-compustat-data.html?view=timeslide"> <ins>Mattia Landoni</ins></a> 
+                            have very helpful tutorials about linking CRSP/Compustat data. </li>
+                            <span class="br"></span>
+                        <li>Linking SDC Platium to CRSP/Compustat: the difficulty in matching these databases is that SDC does not have permno, gvkey, 
+                            and different cusip (6-digit CUSIP), while CRSP/Compustat only retain the latest CUSIP. Thus, we need to use historical CUSIPs, 
+                            i.e. CUSIPs valid at the exact time of each merger. In particular, we use CRSP to obtain historical CUSIP (item NCUSIP) for each 
+                            day of sample period and then merge with SDC data.</li>
+                            <span class="br"></span>
+                        <li>Link IBES ticker to Compustat GVKEY: you can use the <a id="link" href="ibes_compustat.txt"> <ins>CIBESLINK macro</ins></a> to create a linking table CIBESLNK between IBES ticker and 
+                            Compustat GVKEY based on IBES ticker-CRSP permno (ICLINK) and CCM CRSP permno - Compustat GVKEY (CSTLINK2) link. </li>
+                    </ul>
+                </div>
+                
+            </div>
         </div>
         <hr>
 
@@ -86,33 +193,6 @@
 <script type="text/javascript" src="../../javascripts/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="../../javascripts/popper-1.14.6.min.js"></script>
 <script type="text/javascript" src="../../javascripts/bootstrap.min.v4.2.1.js"></script>
-
-<div class="piwik">
-    <!-- Piwik -->
-    <script type="text/javascript">
-        var _paq = _paq || [];
-        _paq.push(["setDocumentTitle", document.title]);
-        _paq.push(['setDomains', ["leiq.bus.umich.edu/qinlei", "leiq.bus.umich.edu/php_piwik", "leiq.bus.umich.edu/learn", "weblogin.umich.edu"]]);
-        _paq.push(['setLinkTrackingTimer', 250]); // 250 milliseconds instead of default 500
-        _paq.push(['enableLinkTracking']);
-        _paq.push(['trackPageView']);
-        (function () {
-            var u = "https://leiq.bus.umich.edu/php_piwik/";
-            _paq.push(['setTrackerUrl', u + 'piwik.php']);
-            _paq.push(['setSiteId', 1]);
-            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-            g.type = 'text/javascript';
-            g.defer = true;
-            g.async = true;
-            g.src = u + 'piwik.js';
-            s.parentNode.insertBefore(g, s);
-        })();
-    </script>
-    <noscript><p><img src="https://leiq.bus.umich.edu/php_piwik/piwik.php?idsite=1&rec=1" style="border:0;" alt=""/></p>
-    </noscript>
-    <!-- End Piwik Code -->
-</div>
-
 
 </body>
 </html>
